@@ -2,7 +2,7 @@ import os
 from setuptools import setup
 from setuptools import find_packages
 
-import maja_newsletter
+import django_newsletter
 
 
 setup(name='django-newsletter',
