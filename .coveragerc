@@ -1,9 +1,9 @@
 [run]
 branch = True
-source = maja_newsletter
+source = django_newsletter
 
 [report]
-omit = maja_newsletter/migrations/*,maja_newsletter/tests*,maja_newsletter/urls*
+omit = django_newsletter/migrations/*,django_newsletter/tests*,django_newsletter/urls*
 # Regexes for lines to exclude from consideration
 exclude_lines =
     # Have to re-enable the standard pragma

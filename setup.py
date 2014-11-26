@@ -5,8 +5,8 @@ from setuptools import find_packages
 import maja_newsletter
 
 
-setup(name='django-maja-newsletter',
-      version=maja_newsletter.__version__,
+setup(name='django-newsletter',
+      version=django_newsletter.__version__,
       description='A Django app for sending newsletter by email to a contact list.',
       long_description=open('README.rst').read() + '\n' +
                        open(os.path.join('docs', 'HISTORY.txt')).read(),
@@ -21,11 +21,10 @@ setup(name='django-maja-newsletter',
           'Development Status :: 5 - Production/Stable',
           'Topic :: Software Development :: Libraries :: Python Modules',],
 
-      author=maja_newsletter.__author__,
-      author_email=maja_newsletter.__email__,
-      url=maja_newsletter.__url__,
+      author=django_newsletter.__author__,
+      author_email=django_newsletter.__email__,
 
-      license=maja_newsletter.__license__,
+      license=django_newsletter.__license__,
       packages=find_packages(exclude=['demo']),
       include_package_data=True,
       zip_safe=False,

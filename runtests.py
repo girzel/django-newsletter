@@ -8,7 +8,7 @@ from tempfile import mkdtemp
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = "maja_newsletter.testsettings"
+os.environ['DJANGO_SETTINGS_MODULE'] = "django_newsletter.testsettings"
 
 @contextmanager
 def temp_dir():
@@ -26,7 +26,7 @@ def main():
             TestRunner = get_runner(settings)
 
             test_runner = TestRunner(interactive=False)
-            failures = test_runner.run_tests(('maja_newsletter',))
+            failures = test_runner.run_tests(('django_newsletter',))
     sys.exit(failures)
 
 
