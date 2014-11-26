@@ -1,4 +1,4 @@
-"""ExcelResponse for maja_newsletter"""
+"""ExcelResponse for django_newsletter"""
 # Based on http://www.djangosnippets.org/snippets/1151/
 import datetime
 
