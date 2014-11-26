@@ -1,4 +1,4 @@
-"""Views for maja_newsletter statistics"""
+"""Views for django_newsletter statistics"""
 import csv
 from datetime import timedelta
 
@@ -12,13 +12,13 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import date
 
-from maja_newsletter.utils.ofc import Chart
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import ContactMailingStatus
-from maja_newsletter.utils.statistics import get_newsletter_top_links
-from maja_newsletter.utils.statistics import get_newsletter_statistics
-from maja_newsletter.utils.statistics import get_newsletter_opening_statistics
-from maja_newsletter.utils.statistics import get_newsletter_clicked_link_statistics
+from django_newsletter.utils.ofc import Chart
+from django_newsletter.models import Newsletter
+from django_newsletter.models import ContactMailingStatus
+from django_newsletter.utils.statistics import get_newsletter_top_links
+from django_newsletter.utils.statistics import get_newsletter_statistics
+from django_newsletter.utils.statistics import get_newsletter_opening_statistics
+from django_newsletter.utils.statistics import get_newsletter_clicked_link_statistics
 
 BG_COLOR = '#ffffff'
 GRID_COLOR = '#eeeeee'

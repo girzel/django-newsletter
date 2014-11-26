@@ -1,9 +1,9 @@
-"""Tokens system for maja_newsletter"""
+"""Tokens system for django_newsletter"""
 from django.conf import settings
 from django.http import Http404
 from django.utils.http import int_to_base36, base36_to_int
 
-from maja_newsletter.models import Contact
+from django_newsletter.models import Contact
 
 
 class ContactTokenGenerator(object):

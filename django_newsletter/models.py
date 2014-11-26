@@ -1,4 +1,4 @@
-"""Models for maja_newsletter"""
+"""Models for django_newsletter"""
 from smtplib import SMTP
 from smtplib import SMTPHeloError
 from datetime import datetime
@@ -14,12 +14,12 @@ from django.contrib.auth.models import Group
 from django.utils.encoding import force_unicode
 
 from tagging.fields import TagField
-from maja_newsletter.managers import ContactManager
-from maja_newsletter.settings import BASE_PATH
-from maja_newsletter.settings import MAILER_HARD_LIMIT
-from maja_newsletter.settings import DEFAULT_HEADER_REPLY
-from maja_newsletter.settings import DEFAULT_HEADER_SENDER
-from maja_newsletter.utils.vcard import vcard_contact_export
+from django_newsletter.managers import ContactManager
+from django_newsletter.settings import BASE_PATH
+from django_newsletter.settings import MAILER_HARD_LIMIT
+from django_newsletter.settings import DEFAULT_HEADER_REPLY
+from django_newsletter.settings import DEFAULT_HEADER_SENDER
+from django_newsletter.utils.vcard import vcard_contact_export
 
 # Patch for Python < 2.6
 try:
@@ -149,7 +149,7 @@ class Contact(models.Model):
     def get_absolute_url(self):
         if self.content_type and self.object_id:
             return self.content_object.get_absolute_url()
-        return reverse('admin:maja_newsletter_contact_change', args=(self.pk,))
+        return reverse('admin:django_newsletter_contact_change', args=(self.pk,))
 
     def __unicode__(self):
         if self.first_name and self.last_name:

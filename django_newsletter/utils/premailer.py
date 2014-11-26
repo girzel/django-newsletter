@@ -1,4 +1,4 @@
-"""Premailer for maja_newsletter
+"""Premailer for django_newsletter
 Used for converting a page with CSS inline and links corrected.
 Based on http://www.peterbe.com/plog/premailer.py"""
 import re

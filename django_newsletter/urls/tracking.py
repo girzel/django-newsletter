@@ -1,8 +1,8 @@
-"""Urls for the maja_newsletter Tracking"""
+"""Urls for the django_newsletter Tracking"""
 from django.conf.urls import url
 from django.conf.urls import patterns
 
-urlpatterns = patterns('maja_newsletter.views.tracking',
+urlpatterns = patterns('django_newsletter.views.tracking',
                        url(r'^newsletter/(?P<slug>[-\w]+)/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)\.(?P<format>png|gif|jpg)$',
                            'view_newsletter_tracking',
                            name='newsletter_newsletter_tracking'),

@@ -1,4 +1,4 @@
-"""Views for maja_newsletter Tracking"""
+"""Views for django_newsletter Tracking"""
 import base64
 from urllib import urlencode
 from urlparse import urlparse
@@ -18,12 +18,12 @@ from django.utils.translation import ugettext as _
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 
-from maja_newsletter.models import Link
-from maja_newsletter.models import Newsletter
-from maja_newsletter.utils.tokens import untokenize
-from maja_newsletter.models import ContactMailingStatus
-from maja_newsletter.settings import USE_UTM_TAGS
-from maja_newsletter.settings import TRACKING_IMAGE
+from django_newsletter.models import Link
+from django_newsletter.models import Newsletter
+from django_newsletter.utils.tokens import untokenize
+from django_newsletter.models import ContactMailingStatus
+from django_newsletter.settings import USE_UTM_TAGS
+from django_newsletter.settings import TRACKING_IMAGE
 
 
 def view_newsletter_tracking(request, slug, uidb36, token, format):

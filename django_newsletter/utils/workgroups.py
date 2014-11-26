@@ -1,5 +1,5 @@
 """Utils for workgroups"""
-from maja_newsletter.models import WorkGroup
+from django_newsletter.models import WorkGroup
 
 
 def request_workgroups(request):

@@ -1,21 +1,21 @@
-"""Admin for maja_newsletter"""
+"""Admin for django_newsletter"""
 from django.contrib import admin
 from django.conf import settings
 
-from maja_newsletter.models import Link
-from maja_newsletter.models import Contact
-from maja_newsletter.models import WorkGroup
-from maja_newsletter.models import SMTPServer
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import MailingList
-from maja_newsletter.models import ContactMailingStatus
+from django_newsletter.models import Link
+from django_newsletter.models import Contact
+from django_newsletter.models import WorkGroup
+from django_newsletter.models import SMTPServer
+from django_newsletter.models import Newsletter
+from django_newsletter.models import MailingList
+from django_newsletter.models import ContactMailingStatus
 
-from maja_newsletter.settings import USE_WORKGROUPS
-from maja_newsletter.admin.contact import ContactAdmin
-from maja_newsletter.admin.workgroup import WorkGroupAdmin
-from maja_newsletter.admin.newsletter import NewsletterAdmin
-from maja_newsletter.admin.smtpserver import SMTPServerAdmin
-from maja_newsletter.admin.mailinglist import MailingListAdmin
+from django_newsletter.settings import USE_WORKGROUPS
+from django_newsletter.admin.contact import ContactAdmin
+from django_newsletter.admin.workgroup import WorkGroupAdmin
+from django_newsletter.admin.newsletter import NewsletterAdmin
+from django_newsletter.admin.smtpserver import SMTPServerAdmin
+from django_newsletter.admin.mailinglist import MailingListAdmin
 
 
 admin.site.register(Contact, ContactAdmin)

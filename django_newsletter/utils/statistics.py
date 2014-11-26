@@ -1,7 +1,7 @@
-"""Statistics for maja_newsletter"""
+"""Statistics for django_newsletter"""
 from django.db.models import Q
 
-from maja_newsletter.models import ContactMailingStatus as Status
+from django_newsletter.models import ContactMailingStatus as Status
 
 
 def smart_division(a, b):

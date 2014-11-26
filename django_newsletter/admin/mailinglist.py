@@ -10,14 +10,14 @@ from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponseRedirect
 
-from maja_newsletter.models import Contact
-from maja_newsletter.models import MailingList
-from maja_newsletter.settings import USE_WORKGROUPS
-from maja_newsletter.utils.workgroups import request_workgroups
-from maja_newsletter.utils.workgroups import request_workgroups_contacts_pk
-from maja_newsletter.utils.workgroups import request_workgroups_mailinglists_pk
-from maja_newsletter.utils.vcard import vcard_contacts_export_response
-from maja_newsletter.utils.excel import ExcelResponse
+from django_newsletter.models import Contact
+from django_newsletter.models import MailingList
+from django_newsletter.settings import USE_WORKGROUPS
+from django_newsletter.utils.workgroups import request_workgroups
+from django_newsletter.utils.workgroups import request_workgroups_contacts_pk
+from django_newsletter.utils.workgroups import request_workgroups_mailinglists_pk
+from django_newsletter.utils.vcard import vcard_contacts_export_response
+from django_newsletter.utils.excel import ExcelResponse
 
 
 class MailingListAdmin(admin.ModelAdmin):
@@ -87,16 +87,16 @@ class MailingListAdmin(admin.ModelAdmin):
                 workgroup.mailinglists.add(new_mailing)
 
         self.message_user(request, _('%s succesfully created by merging.') % new_mailing)
-        return HttpResponseRedirect(reverse('admin:maja_newsletter_mailinglist_change',
+        return HttpResponseRedirect(reverse('admin:django_newsletter_mailinglist_change',
                                             args=[new_mailing.pk]))
     merge_mailinglist.short_description = _('Merge selected mailinglists')
 
     def exportation_links(self, mailinglist):
         """Display links for exportation"""
         return u'<a href="%s">%s</a> / <a href="%s">%s</a>' % (
-            reverse('admin:maja_newsletter_mailinglist_export_excel',
+            reverse('admin:django_newsletter_mailinglist_export_excel',
                     args=[mailinglist.pk]), _('Excel'),
-            reverse('admin:maja_newsletter_mailinglist_export_vcard',
+            reverse('admin:django_newsletter_mailinglist_export_vcard',
                     args=[mailinglist.pk]), _('VCard'))
     exportation_links.allow_tags = True
     exportation_links.short_description = _('Export')
@@ -118,8 +118,8 @@ class MailingListAdmin(admin.ModelAdmin):
         my_urls = patterns('',
                            url(r'^export/vcard/(?P<mailinglist_id>\d+)/$',
                                self.admin_site.admin_view(self.exportion_vcard),
-                               name='maja_newsletter_mailinglist_export_vcard'),
+                               name='django_newsletter_mailinglist_export_vcard'),
                            url(r'^export/excel/(?P<mailinglist_id>\d+)/$',
                                self.admin_site.admin_view(self.exportion_excel),
-                               name='maja_newsletter_mailinglist_export_excel'))
+                               name='django_newsletter_mailinglist_export_excel'))
         return my_urls + urls

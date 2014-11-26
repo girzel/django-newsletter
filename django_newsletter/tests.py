@@ -1,10 +1,10 @@
-"""Unit tests for maja_newsletter"""
+"""Unit tests for django_newsletter"""
 from datetime import datetime
 from datetime import timedelta
 from django.contrib.sites.models import Site
 from django.template import Context
 from django.template.defaultfilters import slugify
-from maja_newsletter.utils.newsletter import track_links
+from django_newsletter.utils.newsletter import track_links
 from tempfile import NamedTemporaryFile
 
 from django.test import TestCase
@@ -12,22 +12,22 @@ from django.http import Http404
 from django.db import IntegrityError
 from django.core.files import File
 
-from maja_newsletter.mailer import Mailer
-from maja_newsletter.models import Link
-from maja_newsletter.models import Contact
-from maja_newsletter.models import MailingList
-from maja_newsletter.models import SMTPServer
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import Attachment
-from maja_newsletter.models import ContactMailingStatus
-from maja_newsletter.utils.tokens import tokenize
-from maja_newsletter.utils.tokens import untokenize
-from maja_newsletter.utils.statistics import get_newsletter_opening_statistics
-from maja_newsletter.utils.statistics import get_newsletter_on_site_opening_statistics
-from maja_newsletter.utils.statistics import get_newsletter_unsubscription_statistics
-from maja_newsletter.utils.statistics import get_newsletter_clicked_link_statistics
-from maja_newsletter.utils.statistics import get_newsletter_top_links
-from maja_newsletter.utils.statistics import get_newsletter_statistics
+from django_newsletter.mailer import Mailer
+from django_newsletter.models import Link
+from django_newsletter.models import Contact
+from django_newsletter.models import MailingList
+from django_newsletter.models import SMTPServer
+from django_newsletter.models import Newsletter
+from django_newsletter.models import Attachment
+from django_newsletter.models import ContactMailingStatus
+from django_newsletter.utils.tokens import tokenize
+from django_newsletter.utils.tokens import untokenize
+from django_newsletter.utils.statistics import get_newsletter_opening_statistics
+from django_newsletter.utils.statistics import get_newsletter_on_site_opening_statistics
+from django_newsletter.utils.statistics import get_newsletter_unsubscription_statistics
+from django_newsletter.utils.statistics import get_newsletter_clicked_link_statistics
+from django_newsletter.utils.statistics import get_newsletter_top_links
+from django_newsletter.utils.statistics import get_newsletter_statistics
 
 
 class FakeSMTP(object):

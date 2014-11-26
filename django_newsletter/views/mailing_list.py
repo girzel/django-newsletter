@@ -1,21 +1,21 @@
-"""Views for maja_newsletter Mailing List"""
+"""Views for django_newsletter Mailing List"""
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 
-from maja_newsletter import settings as maja_settings
-from maja_newsletter.utils.tokens import untokenize
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import MailingList
-from maja_newsletter.models import ContactMailingStatus
+from django_newsletter import settings as django_settings
+from django_newsletter.utils.tokens import untokenize
+from django_newsletter.models import Newsletter
+from django_newsletter.models import MailingList
+from django_newsletter.models import ContactMailingStatus
 
 
 def view_mailinglist_unsubscribe(request, slug, uidb36, token):
     """Unsubscribe a contact to one or all mailing lists"""
     newsletter = get_object_or_404(Newsletter, slug=slug)
     contact = untokenize(uidb36, token)
-    if maja_settings.UNSUBSCRIBE_ALL:
+    if django_settings.UNSUBSCRIBE_ALL:
         mailing_lists = MailingList.objects.all()
         contact.subscriber = False
         contact.save()

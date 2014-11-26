@@ -15,13 +15,13 @@ from django.http import HttpResponseRedirect
 from django.contrib.admin.views.main import ChangeList
 from django.db import DatabaseError
 
-from maja_newsletter.models import MailingList
-from maja_newsletter.settings import USE_WORKGROUPS
-from maja_newsletter.utils.importation import import_dispatcher
-from maja_newsletter.utils.workgroups import request_workgroups
-from maja_newsletter.utils.workgroups import request_workgroups_contacts_pk
-from maja_newsletter.utils.vcard import vcard_contacts_export_response
-from maja_newsletter.utils.excel import ExcelResponse
+from django_newsletter.models import MailingList
+from django_newsletter.settings import USE_WORKGROUPS
+from django_newsletter.utils.importation import import_dispatcher
+from django_newsletter.utils.workgroups import request_workgroups
+from django_newsletter.utils.workgroups import request_workgroups_contacts_pk
+from django_newsletter.utils.vcard import vcard_contacts_export_response
+from django_newsletter.utils.excel import ExcelResponse
 
 
 contacts_imported = Signal(providing_args=['source', 'type'])
@@ -125,7 +125,7 @@ class ContactAdmin(admin.ModelAdmin):
                 workgroup.mailinglists.add(new_mailing)
 
         self.message_user(request, _('%s succesfully created.') % new_mailing)
-        return HttpResponseRedirect(reverse('admin:maja_newsletter_mailinglist_change',
+        return HttpResponseRedirect(reverse('admin:django_newsletter_mailinglist_change',
                                             args=[new_mailing.pk]))
     create_mailinglist.short_description = _('Create a mailinglist')
 

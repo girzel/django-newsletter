@@ -1,4 +1,4 @@
-"""Views for maja_newsletter Newsletter"""
+"""Views for django_newsletter Newsletter"""
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
@@ -7,13 +7,13 @@ from django.contrib.sites.models import Site
 from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string as render_file
 
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import ContactMailingStatus
-from maja_newsletter.utils import render_string
-from maja_newsletter.utils.newsletter import body_insertion
-from maja_newsletter.utils.newsletter import track_links
-from maja_newsletter.utils.tokens import untokenize
-from maja_newsletter.settings import TRACKING_LINKS
+from django_newsletter.models import Newsletter
+from django_newsletter.models import ContactMailingStatus
+from django_newsletter.utils import render_string
+from django_newsletter.utils.newsletter import body_insertion
+from django_newsletter.utils.newsletter import track_links
+from django_newsletter.utils.tokens import untokenize
+from django_newsletter.settings import TRACKING_LINKS
 
 
 def render_newsletter(request, slug, context):

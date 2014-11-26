@@ -1,4 +1,4 @@
-"""Mailer for maja_newsletter"""
+"""Mailer for django_newsletter"""
 import re
 import sys
 import time
@@ -33,19 +33,19 @@ from django.utils.encoding import smart_str
 from django.utils.encoding import smart_unicode
 from django.conf import settings
 
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import ContactMailingStatus
-from maja_newsletter.utils.tokens import tokenize
-from maja_newsletter.utils.newsletter import track_links
-from maja_newsletter.utils.newsletter import body_insertion
-from maja_newsletter.settings import TRACKING_LINKS
-from maja_newsletter.settings import TRACKING_IMAGE
-from maja_newsletter.settings import TRACKING_IMAGE_FORMAT
-from maja_newsletter.settings import UNIQUE_KEY_LENGTH
-from maja_newsletter.settings import UNIQUE_KEY_CHAR_SET
-from maja_newsletter.settings import INCLUDE_UNSUBSCRIPTION
-from maja_newsletter.settings import SLEEP_BETWEEN_SENDING
-from maja_newsletter.settings import \
+from django_newsletter.models import Newsletter
+from django_newsletter.models import ContactMailingStatus
+from django_newsletter.utils.tokens import tokenize
+from django_newsletter.utils.newsletter import track_links
+from django_newsletter.utils.newsletter import body_insertion
+from django_newsletter.settings import TRACKING_LINKS
+from django_newsletter.settings import TRACKING_IMAGE
+from django_newsletter.settings import TRACKING_IMAGE_FORMAT
+from django_newsletter.settings import UNIQUE_KEY_LENGTH
+from django_newsletter.settings import UNIQUE_KEY_CHAR_SET
+from django_newsletter.settings import INCLUDE_UNSUBSCRIPTION
+from django_newsletter.settings import SLEEP_BETWEEN_SENDING
+from django_newsletter.settings import \
      RESTART_CONNECTION_BETWEEN_SENDING
 
 

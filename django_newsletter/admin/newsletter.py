@@ -6,23 +6,23 @@ from django.db.models import Q
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from maja_newsletter.models import Contact
-from maja_newsletter.models import Newsletter
-from maja_newsletter.models import Attachment
-from maja_newsletter.models import MailingList
-from maja_newsletter.mailer import Mailer
-from maja_newsletter.settings import USE_TINYMCE
-from maja_newsletter.settings import USE_WORKGROUPS
+from django_newsletter.models import Contact
+from django_newsletter.models import Newsletter
+from django_newsletter.models import Attachment
+from django_newsletter.models import MailingList
+from django_newsletter.mailer import Mailer
+from django_newsletter.settings import USE_TINYMCE
+from django_newsletter.settings import USE_WORKGROUPS
 try:
     CAN_USE_PREMAILER = True
-    from maja_newsletter.utils.premailer import Premailer
-    from maja_newsletter.utils.premailer import PremailerError
+    from django_newsletter.utils.premailer import Premailer
+    from django_newsletter.utils.premailer import PremailerError
 except ImportError:
     CAN_USE_PREMAILER = False
-from maja_newsletter.utils.workgroups import request_workgroups
-from maja_newsletter.utils.workgroups import request_workgroups_contacts_pk
-from maja_newsletter.utils.workgroups import request_workgroups_newsletters_pk
-from maja_newsletter.utils.workgroups import request_workgroups_mailinglists_pk
+from django_newsletter.utils.workgroups import request_workgroups
+from django_newsletter.utils.workgroups import request_workgroups_contacts_pk
+from django_newsletter.utils.workgroups import request_workgroups_newsletters_pk
+from django_newsletter.utils.workgroups import request_workgroups_mailinglists_pk
 
 
 class AttachmentAdminInline(admin.TabularInline):

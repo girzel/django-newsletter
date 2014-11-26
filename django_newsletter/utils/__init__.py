@@ -1,4 +1,4 @@
-"""Utils for maja_newsletter"""
+"""Utils for django_newsletter"""
 from django.template import Context, Template
 
 

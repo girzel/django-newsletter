@@ -1,8 +1,8 @@
-"""Urls for the maja_newsletter Newsletter"""
+"""Urls for the django_newsletter Newsletter"""
 from django.conf.urls import url
 from django.conf.urls import patterns
 
-urlpatterns = patterns('maja_newsletter.views.newsletter',
+urlpatterns = patterns('django_newsletter.views.newsletter',
                        url(r'^preview/(?P<slug>[-\w]+)/$',
                            'view_newsletter_preview',
                            name='newsletter_newsletter_preview'),

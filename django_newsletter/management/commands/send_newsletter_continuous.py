@@ -8,8 +8,8 @@ from django.utils.translation import activate
 from django.core import signals
 from django.core.management.base import NoArgsCommand
 
-from maja_newsletter.mailer import SMTPMailer
-from maja_newsletter.models import SMTPServer
+from django_newsletter.mailer import SMTPMailer
+from django_newsletter.models import SMTPServer
 
 
 class Command(NoArgsCommand):

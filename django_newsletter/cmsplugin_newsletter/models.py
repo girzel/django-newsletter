@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
 
-from maja_newsletter.models import MailingList
+from django_newsletter.models import MailingList
 
 
 class SubscriptionFormPlugin(CMSPlugin):

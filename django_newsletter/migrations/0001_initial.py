@@ -1,6 +1,6 @@
 from south.db import db
 from django.db import models
-from maja_newsletter.models import *
+from django_newsletter.models import *
 
 
 class Migration:
@@ -8,128 +8,128 @@ class Migration:
     def forwards(self, orm):
 
         # Adding model 'MailingList'
-        db.create_table('maja_newsletter_mailinglist', (
-            ('id', orm['maja_newsletter.MailingList:id']),
-            ('name', orm['maja_newsletter.MailingList:name']),
-            ('description', orm['maja_newsletter.MailingList:description']),
-            ('creation_date', orm['maja_newsletter.MailingList:creation_date']),
-            ('modification_date', orm['maja_newsletter.MailingList:modification_date']),
+        db.create_table('django_newsletter_mailinglist', (
+            ('id', orm['django_newsletter.MailingList:id']),
+            ('name', orm['django_newsletter.MailingList:name']),
+            ('description', orm['django_newsletter.MailingList:description']),
+            ('creation_date', orm['django_newsletter.MailingList:creation_date']),
+            ('modification_date', orm['django_newsletter.MailingList:modification_date']),
         ))
-        db.send_create_signal('maja_newsletter', ['MailingList'])
+        db.send_create_signal('django_newsletter', ['MailingList'])
 
         # Adding model 'ContactMailingStatus'
-        db.create_table('maja_newsletter_contactmailingstatus', (
-            ('id', orm['maja_newsletter.ContactMailingStatus:id']),
-            ('newsletter', orm['maja_newsletter.ContactMailingStatus:newsletter']),
-            ('contact', orm['maja_newsletter.ContactMailingStatus:contact']),
-            ('status', orm['maja_newsletter.ContactMailingStatus:status']),
-            ('link', orm['maja_newsletter.ContactMailingStatus:link']),
-            ('creation_date', orm['maja_newsletter.ContactMailingStatus:creation_date']),
+        db.create_table('django_newsletter_contactmailingstatus', (
+            ('id', orm['django_newsletter.ContactMailingStatus:id']),
+            ('newsletter', orm['django_newsletter.ContactMailingStatus:newsletter']),
+            ('contact', orm['django_newsletter.ContactMailingStatus:contact']),
+            ('status', orm['django_newsletter.ContactMailingStatus:status']),
+            ('link', orm['django_newsletter.ContactMailingStatus:link']),
+            ('creation_date', orm['django_newsletter.ContactMailingStatus:creation_date']),
         ))
-        db.send_create_signal('maja_newsletter', ['ContactMailingStatus'])
+        db.send_create_signal('django_newsletter', ['ContactMailingStatus'])
 
         # Adding model 'WorkGroup'
-        db.create_table('maja_newsletter_workgroup', (
-            ('id', orm['maja_newsletter.WorkGroup:id']),
-            ('name', orm['maja_newsletter.WorkGroup:name']),
-            ('group', orm['maja_newsletter.WorkGroup:group']),
+        db.create_table('django_newsletter_workgroup', (
+            ('id', orm['django_newsletter.WorkGroup:id']),
+            ('name', orm['django_newsletter.WorkGroup:name']),
+            ('group', orm['django_newsletter.WorkGroup:group']),
         ))
-        db.send_create_signal('maja_newsletter', ['WorkGroup'])
+        db.send_create_signal('django_newsletter', ['WorkGroup'])
 
         # Adding model 'Link'
-        db.create_table('maja_newsletter_link', (
-            ('id', orm['maja_newsletter.Link:id']),
-            ('title', orm['maja_newsletter.Link:title']),
-            ('url', orm['maja_newsletter.Link:url']),
-            ('creation_date', orm['maja_newsletter.Link:creation_date']),
+        db.create_table('django_newsletter_link', (
+            ('id', orm['django_newsletter.Link:id']),
+            ('title', orm['django_newsletter.Link:title']),
+            ('url', orm['django_newsletter.Link:url']),
+            ('creation_date', orm['django_newsletter.Link:creation_date']),
         ))
-        db.send_create_signal('maja_newsletter', ['Link'])
+        db.send_create_signal('django_newsletter', ['Link'])
 
         # Adding model 'Newsletter'
-        db.create_table('maja_newsletter_newsletter', (
-            ('id', orm['maja_newsletter.Newsletter:id']),
-            ('title', orm['maja_newsletter.Newsletter:title']),
-            ('content', orm['maja_newsletter.Newsletter:content']),
-            ('mailing_list', orm['maja_newsletter.Newsletter:mailing_list']),
-            ('server', orm['maja_newsletter.Newsletter:server']),
-            ('header_sender', orm['maja_newsletter.Newsletter:header_sender']),
-            ('header_reply', orm['maja_newsletter.Newsletter:header_reply']),
-            ('status', orm['maja_newsletter.Newsletter:status']),
-            ('sending_date', orm['maja_newsletter.Newsletter:sending_date']),
-            ('slug', orm['maja_newsletter.Newsletter:slug']),
-            ('creation_date', orm['maja_newsletter.Newsletter:creation_date']),
-            ('modification_date', orm['maja_newsletter.Newsletter:modification_date']),
+        db.create_table('django_newsletter_newsletter', (
+            ('id', orm['django_newsletter.Newsletter:id']),
+            ('title', orm['django_newsletter.Newsletter:title']),
+            ('content', orm['django_newsletter.Newsletter:content']),
+            ('mailing_list', orm['django_newsletter.Newsletter:mailing_list']),
+            ('server', orm['django_newsletter.Newsletter:server']),
+            ('header_sender', orm['django_newsletter.Newsletter:header_sender']),
+            ('header_reply', orm['django_newsletter.Newsletter:header_reply']),
+            ('status', orm['django_newsletter.Newsletter:status']),
+            ('sending_date', orm['django_newsletter.Newsletter:sending_date']),
+            ('slug', orm['django_newsletter.Newsletter:slug']),
+            ('creation_date', orm['django_newsletter.Newsletter:creation_date']),
+            ('modification_date', orm['django_newsletter.Newsletter:modification_date']),
         ))
-        db.send_create_signal('maja_newsletter', ['Newsletter'])
+        db.send_create_signal('django_newsletter', ['Newsletter'])
 
         # Adding model 'SMTPServer'
-        db.create_table('maja_newsletter_smtpserver', (
-            ('id', orm['maja_newsletter.SMTPServer:id']),
-            ('name', orm['maja_newsletter.SMTPServer:name']),
-            ('host', orm['maja_newsletter.SMTPServer:host']),
-            ('user', orm['maja_newsletter.SMTPServer:user']),
-            ('password', orm['maja_newsletter.SMTPServer:password']),
-            ('port', orm['maja_newsletter.SMTPServer:port']),
-            ('tls', orm['maja_newsletter.SMTPServer:tls']),
-            ('headers', orm['maja_newsletter.SMTPServer:headers']),
-            ('mails_hour', orm['maja_newsletter.SMTPServer:mails_hour']),
+        db.create_table('django_newsletter_smtpserver', (
+            ('id', orm['django_newsletter.SMTPServer:id']),
+            ('name', orm['django_newsletter.SMTPServer:name']),
+            ('host', orm['django_newsletter.SMTPServer:host']),
+            ('user', orm['django_newsletter.SMTPServer:user']),
+            ('password', orm['django_newsletter.SMTPServer:password']),
+            ('port', orm['django_newsletter.SMTPServer:port']),
+            ('tls', orm['django_newsletter.SMTPServer:tls']),
+            ('headers', orm['django_newsletter.SMTPServer:headers']),
+            ('mails_hour', orm['django_newsletter.SMTPServer:mails_hour']),
         ))
-        db.send_create_signal('maja_newsletter', ['SMTPServer'])
+        db.send_create_signal('django_newsletter', ['SMTPServer'])
 
         # Adding model 'Contact'
-        db.create_table('maja_newsletter_contact', (
-            ('id', orm['maja_newsletter.Contact:id']),
-            ('email', orm['maja_newsletter.Contact:email']),
-            ('first_name', orm['maja_newsletter.Contact:first_name']),
-            ('last_name', orm['maja_newsletter.Contact:last_name']),
-            ('subscriber', orm['maja_newsletter.Contact:subscriber']),
-            ('valid', orm['maja_newsletter.Contact:valid']),
-            ('tester', orm['maja_newsletter.Contact:tester']),
-            ('tags', orm['maja_newsletter.Contact:tags']),
-            ('content_type', orm['maja_newsletter.Contact:content_type']),
-            ('object_id', orm['maja_newsletter.Contact:object_id']),
-            ('creation_date', orm['maja_newsletter.Contact:creation_date']),
-            ('modification_date', orm['maja_newsletter.Contact:modification_date']),
+        db.create_table('django_newsletter_contact', (
+            ('id', orm['django_newsletter.Contact:id']),
+            ('email', orm['django_newsletter.Contact:email']),
+            ('first_name', orm['django_newsletter.Contact:first_name']),
+            ('last_name', orm['django_newsletter.Contact:last_name']),
+            ('subscriber', orm['django_newsletter.Contact:subscriber']),
+            ('valid', orm['django_newsletter.Contact:valid']),
+            ('tester', orm['django_newsletter.Contact:tester']),
+            ('tags', orm['django_newsletter.Contact:tags']),
+            ('content_type', orm['django_newsletter.Contact:content_type']),
+            ('object_id', orm['django_newsletter.Contact:object_id']),
+            ('creation_date', orm['django_newsletter.Contact:creation_date']),
+            ('modification_date', orm['django_newsletter.Contact:modification_date']),
         ))
-        db.send_create_signal('maja_newsletter', ['Contact'])
+        db.send_create_signal('django_newsletter', ['Contact'])
 
         # Adding ManyToManyField 'WorkGroup.mailinglists'
-        db.create_table('maja_newsletter_workgroup_mailinglists', (
+        db.create_table('django_newsletter_workgroup_mailinglists', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('workgroup', models.ForeignKey(orm.WorkGroup, null=False)),
             ('mailinglist', models.ForeignKey(orm.MailingList, null=False))
         ))
 
         # Adding ManyToManyField 'MailingList.subscribers'
-        db.create_table('maja_newsletter_mailinglist_subscribers', (
+        db.create_table('django_newsletter_mailinglist_subscribers', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('mailinglist', models.ForeignKey(orm.MailingList, null=False)),
             ('contact', models.ForeignKey(orm.Contact, null=False))
         ))
 
         # Adding ManyToManyField 'WorkGroup.contacts'
-        db.create_table('maja_newsletter_workgroup_contacts', (
+        db.create_table('django_newsletter_workgroup_contacts', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('workgroup', models.ForeignKey(orm.WorkGroup, null=False)),
             ('contact', models.ForeignKey(orm.Contact, null=False))
         ))
 
         # Adding ManyToManyField 'WorkGroup.newsletters'
-        db.create_table('maja_newsletter_workgroup_newsletters', (
+        db.create_table('django_newsletter_workgroup_newsletters', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('workgroup', models.ForeignKey(orm.WorkGroup, null=False)),
             ('newsletter', models.ForeignKey(orm.Newsletter, null=False))
         ))
 
         # Adding ManyToManyField 'MailingList.unsubscribers'
-        db.create_table('maja_newsletter_mailinglist_unsubscribers', (
+        db.create_table('django_newsletter_mailinglist_unsubscribers', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('mailinglist', models.ForeignKey(orm.MailingList, null=False)),
             ('contact', models.ForeignKey(orm.Contact, null=False))
         ))
 
         # Adding ManyToManyField 'Newsletter.test_contacts'
-        db.create_table('maja_newsletter_newsletter_test_contacts', (
+        db.create_table('django_newsletter_newsletter_test_contacts', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('newsletter', models.ForeignKey(orm.Newsletter, null=False)),
             ('contact', models.ForeignKey(orm.Contact, null=False))
@@ -138,43 +138,43 @@ class Migration:
     def backwards(self, orm):
 
         # Deleting model 'MailingList'
-        db.delete_table('maja_newsletter_mailinglist')
+        db.delete_table('django_newsletter_mailinglist')
 
         # Deleting model 'ContactMailingStatus'
-        db.delete_table('maja_newsletter_contactmailingstatus')
+        db.delete_table('django_newsletter_contactmailingstatus')
 
         # Deleting model 'WorkGroup'
-        db.delete_table('maja_newsletter_workgroup')
+        db.delete_table('django_newsletter_workgroup')
 
         # Deleting model 'Link'
-        db.delete_table('maja_newsletter_link')
+        db.delete_table('django_newsletter_link')
 
         # Deleting model 'Newsletter'
-        db.delete_table('maja_newsletter_newsletter')
+        db.delete_table('django_newsletter_newsletter')
 
         # Deleting model 'SMTPServer'
-        db.delete_table('maja_newsletter_smtpserver')
+        db.delete_table('django_newsletter_smtpserver')
 
         # Deleting model 'Contact'
-        db.delete_table('maja_newsletter_contact')
+        db.delete_table('django_newsletter_contact')
 
         # Dropping ManyToManyField 'WorkGroup.mailinglists'
-        db.delete_table('maja_newsletter_workgroup_mailinglists')
+        db.delete_table('django_newsletter_workgroup_mailinglists')
 
         # Dropping ManyToManyField 'MailingList.subscribers'
-        db.delete_table('maja_newsletter_mailinglist_subscribers')
+        db.delete_table('django_newsletter_mailinglist_subscribers')
 
         # Dropping ManyToManyField 'WorkGroup.contacts'
-        db.delete_table('maja_newsletter_workgroup_contacts')
+        db.delete_table('django_newsletter_workgroup_contacts')
 
         # Dropping ManyToManyField 'WorkGroup.newsletters'
-        db.delete_table('maja_newsletter_workgroup_newsletters')
+        db.delete_table('django_newsletter_workgroup_newsletters')
 
         # Dropping ManyToManyField 'MailingList.unsubscribers'
-        db.delete_table('maja_newsletter_mailinglist_unsubscribers')
+        db.delete_table('django_newsletter_mailinglist_unsubscribers')
 
         # Dropping ManyToManyField 'Newsletter.test_contacts'
-        db.delete_table('maja_newsletter_newsletter_test_contacts')
+        db.delete_table('django_newsletter_newsletter_test_contacts')
 
     models = {
         'auth.group': {
@@ -196,7 +196,7 @@ class Migration:
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'maja_newsletter.contact': {
+        'django_newsletter.contact': {
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']", 'null': 'True', 'blank': 'True'}),
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'email': ('django.db.models.fields.EmailField', [], {'unique': 'True', 'max_length': '75'}),
@@ -210,45 +210,45 @@ class Migration:
             'tester': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'valid': ('django.db.models.fields.BooleanField', [], {'default': 'True', 'blank': 'True'})
         },
-        'maja_newsletter.contactmailingstatus': {
-            'contact': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['maja_newsletter.Contact']"}),
+        'django_newsletter.contactmailingstatus': {
+            'contact': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['django_newsletter.Contact']"}),
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'link': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['maja_newsletter.Link']", 'null': 'True', 'blank': 'True'}),
-            'newsletter': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['maja_newsletter.Newsletter']"}),
+            'link': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['django_newsletter.Link']", 'null': 'True', 'blank': 'True'}),
+            'newsletter': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['django_newsletter.Newsletter']"}),
             'status': ('django.db.models.fields.IntegerField', [], {})
         },
-        'maja_newsletter.link': {
+        'django_newsletter.link': {
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'url': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        'maja_newsletter.mailinglist': {
+        'django_newsletter.mailinglist': {
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modification_date': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'subscribers': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.Contact']"}),
-            'unsubscribers': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.Contact']", 'null': 'True', 'blank': 'True'})
+            'subscribers': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.Contact']"}),
+            'unsubscribers': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.Contact']", 'null': 'True', 'blank': 'True'})
         },
-        'maja_newsletter.newsletter': {
+        'django_newsletter.newsletter': {
             'content': ('django.db.models.fields.TextField', [], {'default': "u'<body>\\n<!-- Edit your newsletter here -->\\n</body>'"}),
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'header_reply': ('django.db.models.fields.CharField', [], {'default': "'Emencia Newsletter<noreply@emencia.com>'", 'max_length': '255'}),
             'header_sender': ('django.db.models.fields.CharField', [], {'default': "'Emencia Newsletter<noreply@emencia.com>'", 'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'mailing_list': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['maja_newsletter.MailingList']"}),
+            'mailing_list': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['django_newsletter.MailingList']"}),
             'modification_date': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'sending_date': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'server': ('django.db.models.fields.related.ForeignKey', [], {'default': '1', 'to': "orm['maja_newsletter.SMTPServer']"}),
+            'server': ('django.db.models.fields.related.ForeignKey', [], {'default': '1', 'to': "orm['django_newsletter.SMTPServer']"}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'}),
             'status': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'test_contacts': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.Contact']", 'null': 'True', 'blank': 'True'}),
+            'test_contacts': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.Contact']", 'null': 'True', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        'maja_newsletter.smtpserver': {
+        'django_newsletter.smtpserver': {
             'headers': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'host': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -259,14 +259,14 @@ class Migration:
             'tls': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
             'user': ('django.db.models.fields.CharField', [], {'max_length': '128', 'blank': 'True'})
         },
-        'maja_newsletter.workgroup': {
-            'contacts': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.Contact']", 'null': 'True', 'blank': 'True'}),
+        'django_newsletter.workgroup': {
+            'contacts': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.Contact']", 'null': 'True', 'blank': 'True'}),
             'group': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.Group']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'mailinglists': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.MailingList']", 'null': 'True', 'blank': 'True'}),
+            'mailinglists': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.MailingList']", 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'newsletters': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['maja_newsletter.Newsletter']", 'null': 'True', 'blank': 'True'})
+            'newsletters': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['django_newsletter.Newsletter']", 'null': 'True', 'blank': 'True'})
         }
     }
 
-    complete_apps = ['maja_newsletter']
+    complete_apps = ['django_newsletter']

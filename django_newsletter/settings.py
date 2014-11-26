@@ -1,4 +1,4 @@
-"""Settings for maja_newsletter"""
+"""Settings for django_newsletter"""
 import string
 from django.conf import settings
 
@@ -25,7 +25,7 @@ UNIQUE_KEY_LENGTH = getattr(settings, 'NEWSLETTER_UNIQUE_KEY_LENGTH', 8)
 UNIQUE_KEY_CHAR_SET = getattr(settings, 'NEWSLETTER_UNIQUE_KEY_CHAR_SET', string.ascii_uppercase + string.digits)
 
 DEFAULT_HEADER_SENDER = getattr(settings, 'NEWSLETTER_DEFAULT_HEADER_SENDER',
-                                'Maja Newsletter<noreply@example.com>')
+                                'Django Newsletter<noreply@example.com>')
 DEFAULT_HEADER_REPLY = getattr(settings, 'NEWSLETTER_DEFAULT_HEADER_REPLY',
                                DEFAULT_HEADER_SENDER)
 

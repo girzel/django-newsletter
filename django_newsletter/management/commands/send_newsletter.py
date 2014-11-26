@@ -3,8 +3,8 @@ from django.conf import settings
 from django.utils.translation import activate
 from django.core.management.base import NoArgsCommand
 
-from maja_newsletter.mailer import Mailer
-from maja_newsletter.models import Newsletter
+from django_newsletter.mailer import Mailer
+from django_newsletter.models import Newsletter
 import codecs
 
 class Command(NoArgsCommand):

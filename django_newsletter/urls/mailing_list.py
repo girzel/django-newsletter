@@ -1,11 +1,11 @@
-"""Urls for the maja_newsletter Mailing List"""
+"""Urls for the django_newsletter Mailing List"""
 from django.conf.urls import url
 from django.conf.urls import patterns
 
-from maja_newsletter.forms import MailingListSubscriptionForm
-from maja_newsletter.forms import AllMailingListSubscriptionForm
+from django_newsletter.forms import MailingListSubscriptionForm
+from django_newsletter.forms import AllMailingListSubscriptionForm
 
-urlpatterns = patterns('maja_newsletter.views.mailing_list',
+urlpatterns = patterns('django_newsletter.views.mailing_list',
                        url(r'^unsubscribe/(?P<slug>[-\w]+)/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
                            'view_mailinglist_unsubscribe',
                            name='newsletter_mailinglist_unsubscribe'),

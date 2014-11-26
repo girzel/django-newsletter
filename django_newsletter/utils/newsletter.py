@@ -2,8 +2,8 @@
 from BeautifulSoup import BeautifulSoup
 from django.core.urlresolvers import reverse
 
-from maja_newsletter.models import Link
-from maja_newsletter.settings import USE_PRETTIFY
+from django_newsletter.models import Link
+from django_newsletter.settings import USE_PRETTIFY
 
 
 def body_insertion(content, insertion, end=False):

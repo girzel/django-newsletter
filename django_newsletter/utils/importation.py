@@ -11,8 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from tagging.models import Tag
 
-from maja_newsletter.models import Contact
-from maja_newsletter.models import MailingList
+from django_newsletter.models import Contact
+from django_newsletter.models import MailingList
 
 
 COLUMNS = ['email', 'first_name', 'last_name', 'tags']

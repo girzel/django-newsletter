@@ -1,4 +1,4 @@
-"""Managers for maja_newsletter"""
+"""Managers for django_newsletter"""
 from django.db import models
 
 
