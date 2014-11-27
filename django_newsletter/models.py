@@ -290,12 +290,12 @@ class Link(models.Model):
         db_table = 'newsletter_link'
 
 
+def get_newsletter_storage_path(self, filename):
+    filename = force_unicode(filename)
+    return '/'.join([BASE_PATH, self.newsletter.slug, filename])
+
 class Attachment(models.Model):
     """Attachment file in a newsletter"""
-
-    def get_newsletter_storage_path(self, filename):
-        filename = force_unicode(filename)
-        return '/'.join([BASE_PATH, self.newsletter.slug, filename])
 
     newsletter = models.ForeignKey(Newsletter, verbose_name=_('newsletter'))
     title = models.CharField(_('title'), max_length=255)
