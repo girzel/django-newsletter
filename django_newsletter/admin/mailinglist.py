@@ -37,7 +37,7 @@ class MailingListAdmin(admin.ModelAdmin):
     actions_on_top = False
     actions_on_bottom = True
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         queryset = super(MailingListAdmin, self).queryset(request)
         if not request.user.is_superuser and USE_WORKGROUPS:
             mailinglists_pk = request_workgroups_mailinglists_pk(request)

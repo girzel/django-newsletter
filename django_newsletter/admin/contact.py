@@ -44,7 +44,7 @@ class ContactAdmin(admin.ModelAdmin):
     actions_on_top = False
     actions_on_bottom = True
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         queryset = super(ContactAdmin, self).queryset(request)
         if not request.user.is_superuser and USE_WORKGROUPS:
             contacts_pk = request_workgroups_contacts_pk(request)
@@ -165,7 +165,7 @@ class ContactAdmin(admin.ModelAdmin):
                         self.list_select_related, self.list_per_page,
                         self.list_max_show_all, self.list_editable,
                         self)
-        return cl.get_query_set(request)
+        return cl.get_queryset(request)
 
     def creation_mailinglist(self, request):
         """Create a mailing list form the filtered contacts"""
