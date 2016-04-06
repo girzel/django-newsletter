@@ -6,7 +6,6 @@ from datetime import datetime
 from django.contrib import admin
 from django.dispatch import Signal
 from django.conf.urls import url
-from django.conf.urls import patterns
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -183,17 +182,17 @@ class ContactAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(ContactAdmin, self).get_urls()
-        my_urls = patterns('',
-                           url(r'^import/$',
-                               self.admin_site.admin_view(self.importation),
-                               name='newsletter_contact_import'),
-                           url(r'^create_mailinglist/$',
-                               self.admin_site.admin_view(self.creation_mailinglist),
-                               name='newsletter_contact_create_mailinglist'),
-                           url(r'^export/vcard/$',
-                               self.admin_site.admin_view(self.exportation_vcard),
-                               name='newsletter_contact_export_vcard'),
-                           url(r'^export/excel/$',
-                               self.admin_site.admin_view(self.exportation_excel),
-                               name='newsletter_contact_export_excel'),)
+        my_urls = [
+            url(r'^import/$',
+                self.admin_site.admin_view(self.importation),
+                name='newsletter_contact_import'),
+            url(r'^create_mailinglist/$',
+                self.admin_site.admin_view(self.creation_mailinglist),
+                name='newsletter_contact_create_mailinglist'),
+            url(r'^export/vcard/$',
+                self.admin_site.admin_view(self.exportation_vcard),
+                name='newsletter_contact_export_vcard'),
+            url(r'^export/excel/$',
+                self.admin_site.admin_view(self.exportation_excel),
+                name='newsletter_contact_export_excel'),]
         return my_urls + urls
